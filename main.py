@@ -9,8 +9,9 @@ import app
 import app1
 import app2
 import app3
+import app4
 
-pages = ["Top 10 Today", "Shop By Season", "People who bought this also bought...", "Search by description"]
+pages = ["Top 10 Today", "Shop By Season", "People who bought this also bought...", "Search by description", "Dress Finder App"]
 
 page = st.sidebar.selectbox("What kind of recommendations would you like to see?", pages)
 
@@ -37,4 +38,10 @@ if page == pages[3]:
         app3.main()
     except:
         st.write('Looks like something went wrong :(')
+
+if page == pages[4]:
+    try:
+        app4.main()
+    except:
+        st.write("Looks like something went wrong :(")
 
