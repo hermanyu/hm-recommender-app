@@ -54,12 +54,13 @@ def main():
         query = convert_to_tensor(query)
 
         model = load_model()
+        model.to('cpu')
 
         query = resizer(query)
-        query = normalize(query).to('cuda')
+        query = normalize(query).to('cpu')
         query = model(query)
         query = query.view(1, query.shape[0], query.shape[1], query.shape[2])
-        query = flatten(query)[0].to('cpu').numpy()
+        query = flatten(query)[0].numpy()
 
         embeddings = load_embeddings()
 
