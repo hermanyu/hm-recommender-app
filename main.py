@@ -40,8 +40,5 @@ if page == pages[3]:
         st.write('Looks like something went wrong :(')
 
 if page == pages[4]:
-    try:
-        app4.main()
-    except:
-        st.write("Looks like something went wrong :(")
+    app4.main()
 
